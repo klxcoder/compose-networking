@@ -28,7 +28,8 @@ root_abcd_1234
 -rw-rw-r-- 1 node node 14 Mar  4 00:30 /run/secrets/db_root_password
 
 (base) ┌──(klx㉿kali)-[~/compose-secrets] (main)
-└─$ 
+└─$ docker exec -it compose-secrets-app-1 curl localhost:3000/login
+root_abcd_1234                                                                                                  
 
 (base) ┌──(klx㉿kali)-[~/compose-secrets] (main)
 └─$ docker compose down
