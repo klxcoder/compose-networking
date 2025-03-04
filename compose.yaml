@@ -17,7 +17,12 @@ services:
           path: Dockerfile
         - action: rebuild
           path: compose.yaml
-
+  node:
+    image: node
+    working_dir: /app
+    volumes:
+      - ./src:/app
+    command: ["tail", "-f", "/dev/null"]
 secrets:
   db_root_password:
     file: db_root_password.txt
