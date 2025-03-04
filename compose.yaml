@@ -2,6 +2,8 @@ services:
   app:
     build:
       context: .
+    secrets:
+      - db_root_password
     develop:
       watch:
         - action: sync
@@ -15,3 +17,7 @@ services:
           path: Dockerfile
         - action: rebuild
           path: compose.yaml
+
+secrets:
+  db_root_password:
+    file: db_root_password.txt
