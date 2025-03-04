@@ -23,6 +23,8 @@ services:
     volumes:
       - ./src:/app
     command: ["tail", "-f", "/dev/null"]
+    links:
+      - "app:express"
 secrets:
   db_root_password:
     file: db_root_password.txt

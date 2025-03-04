@@ -11,6 +11,8 @@
 (base) ┌──(klx㉿kali)-[~/compose-networking] (main)
 └─$ docker exec -it compose-networking-node-1 curl app:3000
 Hello from non-root container
+
 (base) ┌──(klx㉿kali)-[~/compose-networking] (main)
-└─$ 
+└─$ docker exec -it compose-networking-node-1 curl express:3000
+Hello from non-root container
 ```
