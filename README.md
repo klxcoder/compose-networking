@@ -29,7 +29,18 @@ root_abcd_1234
 
 (base) ┌──(klx㉿kali)-[~/compose-secrets] (main)
 └─$ docker exec -it compose-secrets-app-1 curl localhost:3000/login
-root_abcd_1234                                                                                                  
+root_abcd_1234                                                                        
+
+(base) ┌──(klx㉿kali)-[~/compose-secrets] (main)
+└─$ docker exec -it compose-secrets-app-1 curl -X POST http://localhost:3000/login -H "Content-Type: application/json" -d '{"password": "random_password"}'
+Login fail!                                                                                                                               
+
+(base) ┌──(klx㉿kali)-[~/compose-secrets] (main)
+└─$ docker exec -it compose-secrets-app-1 curl -X POST http://localhost:3000/login -H "Content-Type: application/json" -d '{"password": "root_abcd_1234"}' 
+Login success!                                                                                                                            
+
+(base) ┌──(klx㉿kali)-[~/compose-secrets] (main)
+└─$ 
 
 (base) ┌──(klx㉿kali)-[~/compose-secrets] (main)
 └─$ docker compose down
