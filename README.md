@@ -16,3 +16,7 @@ Hello from non-root container
 └─$ docker exec -it compose-networking-node-1 curl express:3000
 Hello from non-root container
 ```
+
+# Note: Do not use multiple networks inside compose.yaml
+
+- Or you will have error below: `Error response from daemon: failed to create task for container: failed to create shim task: OCI runtime create failed: runc create failed: unable to start container process: error during container init: error running hook #0: error running hook: exit status 1, stdout: , stderr: failed to add interface veth4f73e46 to sandbox: error setting interface "veth4f73e46" IP to 192.168.200.2/24: cannot program address 192.168.200.2/24 in sandbox interface because it conflicts with existing route {Ifindex: 125 Dst: 0.0.0.0/0 Src: <nil> Gw: 192.168.100.1 Flags: [] Table: 254 Realm: 0}: unknown`
